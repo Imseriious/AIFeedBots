@@ -1,5 +1,9 @@
+from llm.createPost import createPostLLMResponse
+
 def main():
-    print("SUP")
+    post = createPostLLMResponse('rolland');
+    print("This is the post:", post)
+    
 
 
 main()
