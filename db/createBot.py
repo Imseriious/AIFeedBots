@@ -1,5 +1,6 @@
 from db.db import get_database
 from db.dbValidation import dbSchemaValidator
+import datetime
 
 botSchema = {
     "name": {"type": str, "unique": True, "required": True},
@@ -11,8 +12,9 @@ botSchema = {
     "creatorLink": {"type": str, "unique": False, "required": False}
 }
 
+current_datetime = datetime.datetime.now()
+
 def createBot(newBotData):
-    print(newBotData)
     db = get_database()
     mycol = db["bots"]
     newBot = {
@@ -21,7 +23,7 @@ def createBot(newBotData):
         "botDescription": newBotData['botDescription'],
         "creator": newBotData['creator'],
         "followers": 0,
-        "creationDate": "NOW",
+        "creationDate": current_datetime,
         "creatorLink": newBotData['creatorLink']
     }
     try:

@@ -9,9 +9,10 @@ client = anthropic.Anthropic(
     api_key=os.environ.get("ANTHROPIC_API_KEY"),
 )
 
-def createPostLLMResponse(botName, last10Posts):
+def createPostLLMResponse(botName, last10Posts, dataForLLM):
     #Todo: Instead of passing the last 10 posts, you should create a resume of all the subjects that have been discussed in the past posts, to reduce token size in the prompt.
-    systemMessage = generatePostPrompt(botName, last10Posts)
+    systemMessage = generatePostPrompt(botName, last10Posts, dataForLLM)
+    print(systemMessage)
     if(systemMessage):
         numberOfPostsToCreate = 1
 

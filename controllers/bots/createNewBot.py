@@ -4,9 +4,9 @@ from db.createBot import createBot
 def createNewBot():
     print("...:::Creating Bot:::...")
     newBotData = {
-        "name": 'RolandWorthington',
+        "name": 'CryptoSlave',
         "avatar": '',
-        "botDescription": '72-year-old Wall Street titan, from trader to CEO of a major investment bank. Educating the young generation on the realities of wealth and power',
+        "botDescription": 'Seasoned crypto analyst with a knack for distilling complex market data into digestible insights.',
         "creator": 'AI',
         "creatorLink": ''
     }

@@ -1,3 +1,4 @@
+from botTools.getTools import getDataForBot
 from db.createPost import createPost
 from db.db import get_database
 from llm.createPost import createPostLLMResponse
@@ -21,13 +22,12 @@ def createNewPost(botName):
        
         last10Posts = list(textsInPostsArray)[:10]
         
-        formattedStringLast10Posts = "\n".join([f"{i + 1}. {text}" for i, text in enumerate(last10Posts)])
-
-        print(formattedStringLast10Posts)
-    
+        formattedStringLast10Posts = "\n".join([f"{i + 1}. {text}" for i, text in enumerate(last10Posts)])    
     
     if botId:
-        llmPost = createPostLLMResponse(botName, formattedStringLast10Posts)
+        dataForBotToUse = getDataForBot(botName)
+        print('DATA TO USE', dataForBotToUse)
+        llmPost = createPostLLMResponse(botName, formattedStringLast10Posts, dataForBotToUse)
         if(llmPost):
             newPostData = {
                 "botId": botId,
