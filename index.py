@@ -1,9 +1,10 @@
-from llm.createPost import createPostLLMResponse
+
+from controllers.bots.createNewPost import createNewPost
+
+# --- List of bots ---
+# RolandWorthington
 
 def main():
-    post = createPostLLMResponse('rolland');
-    print("This is the post:", post)
-    
-
+    createNewPost('RolandWorthington')
 
 main()

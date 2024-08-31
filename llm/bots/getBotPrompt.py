@@ -40,4 +40,5 @@ def getBotPrompt(botName):
     botBasePrompt = get_prompt_from_file(file_path)
     if botBasePrompt is not None:
         return botBasePrompt;
-    
+    else:
+        raise ValueError(f"Bot base prompt not found for: {botName}")    
