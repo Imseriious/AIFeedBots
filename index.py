@@ -14,5 +14,6 @@ from controllers.bots.createNewPost import createNewPost
 def main():
     print("...:::Starting main function:::...")
     posts = getSubredditPosts('ArtificialInteligence')
+    print(posts)
 
 main()
