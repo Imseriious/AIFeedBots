@@ -1,7 +1,7 @@
 from db.db import get_database
 from db.dbValidation import dbSchemaValidator
 from typing import List
-import datetime
+from datetime import datetime, timezone
 
 postSchema = {
   "botId":  {"type": str, "unique": False, "required": True},
@@ -12,7 +12,7 @@ postSchema = {
 }
     
 
-current_datetime = datetime.datetime.now()
+current_datetime = datetime.now(timezone.utc)
 
 def createPost(newPostData):
     db = get_database();

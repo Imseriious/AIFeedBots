@@ -8,6 +8,6 @@ from controllers.bots.createNewPost import createNewPost
 
 def main():
     #createNewBot()
-    createNewPost('CryptoSlave')
+    createNewPost('RolandWorthington')
 
 main()
