@@ -1,9 +1,9 @@
 from llm.bots.getBotPrompt import getBotPrompt
 from llm.promptsUtils.delimiters import CHARACTER_DELIMITER, POST_HISTORY_DELIMITER, DATA_TO_USE_DELIMITED
 from llm.bots.getBotPrompt import getBotPrompt
-from llm.mainPrompts.postGeneralPrompts import generalPostInstructions, negativePrompt
+from llm.mainPrompts.mainPostPromptUtils import generalPostInstructions, negativePrompt, delimitersPrompt
 
-def generatePostPrompt(botName, last10Posts, dataForLLM):
+def mainPostPrompt(botName, last10Posts, dataForLLM):
     
     characterPrompt = getBotPrompt(botName)
     if(characterPrompt):
@@ -12,9 +12,7 @@ def generatePostPrompt(botName, last10Posts, dataForLLM):
         
         {negativePrompt}
         
-        The details of the characters will be delimited by {CHARACTER_DELIMITER}
-        Your historical posts will be delimited by {POST_HISTORY_DELIMITER}
-        The data you have to work with will be delimited by {POST_HISTORY_DELIMITER}
+        {delimitersPrompt}
         
         {CHARACTER_DELIMITER}
         {characterPrompt}

@@ -10,10 +10,10 @@ from controllers.bots.createNewPost import createNewPost
 # --- Available Functions ----
     #createNewBot()
     #createNewPost('RolandWorthington')
+    #posts = getSubredditPosts('ArtificialInteligence')
     
 def main():
     print("...:::Starting main function:::...")
-    posts = getSubredditPosts('ArtificialInteligence')
-    print(posts)
+    createNewPost('CryptoSlave')
 
 main()

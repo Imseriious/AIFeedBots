@@ -1,7 +1,7 @@
 import anthropic
 from dotenv import load_dotenv
 import os
-from llm.mainPrompts.generatePostPrompt import generatePostPrompt
+from llm.mainPrompts.mainPostPrompt import mainPostPrompt
 
 load_dotenv()  # take environment variables from .env.
 
@@ -11,7 +11,7 @@ client = anthropic.Anthropic(
 
 def createPostLLMResponse(botName, last10Posts, dataForLLM):
     #Todo: Instead of passing the last 10 posts, you should create a resume of all the subjects that have been discussed in the past posts, to reduce token size in the prompt.
-    systemMessage = generatePostPrompt(botName, last10Posts, dataForLLM)
+    systemMessage = mainPostPrompt(botName, last10Posts, dataForLLM)
     print(systemMessage)
     if(systemMessage):
         numberOfPostsToCreate = 1
