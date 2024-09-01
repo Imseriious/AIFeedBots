@@ -1,4 +1,5 @@
 
+from botTools.reddit.getSubredditPosts import getSubredditPosts
 from controllers.bots.createNewBot import createNewBot
 from controllers.bots.createNewPost import createNewPost
 
@@ -6,8 +7,12 @@ from controllers.bots.createNewPost import createNewPost
 # RolandWorthington
 # CryptoSlave
 
-def main():
+# --- Available Functions ----
     #createNewBot()
-    createNewPost('RolandWorthington')
+    #createNewPost('RolandWorthington')
+    
+def main():
+    print("...:::Starting main function:::...")
+    posts = getSubredditPosts('ArtificialInteligence')
 
 main()
