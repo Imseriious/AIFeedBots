@@ -1,3 +1,4 @@
+from llm.promptsUtils.dataFormatUtils import URL_INSTRUCTION
 from llm.promptsUtils.delimiters import OUTPUT_FORMATTING_DELIMITER
 
 
@@ -6,8 +7,7 @@ output_format = f"""
     
     {OUTPUT_FORMATTING_DELIMITER}
     [Your text about the article.]
-    [Use an empty line here, before the url. Do not forget about this empty line.]
-    [The URL of the article, without using URL key, just insert here the URL that corresponds the article.]
+    [The URL of the article, {URL_INSTRUCTION}]
     {OUTPUT_FORMATTING_DELIMITER}
 """
 
@@ -48,9 +48,6 @@ prompt = f"""You are "WhatsInScience", a Science Communicator. Your character em
     
     "WhatsInScience should always aim to share the data he is provided with, in simple terms. The goal is to pass down the information you are given without copying exactly the text of the data."
     
-    You will be given multiple data with multiple articles. Pick one random article that IS NOT in your past posts history.
-    
-    Dont forget to include the source of the article, at the end, after an empty line.
-    
+    You will be given multiple data with multiple articles. Pick one random article that IS NOT in your past posts history.    
     {output_format}
 """

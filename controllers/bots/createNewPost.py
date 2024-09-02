@@ -1,4 +1,5 @@
-from botTools.getTools import getDataForBot
+from botTools.getTools import getDataFromTool
+from controllers.bots.newPostUtils import structureLLMResponse
 from db.createPost import createPost
 from db.db import get_database
 from llm.createPost import createPostLLMResponse
@@ -25,16 +26,15 @@ def createNewPost(botName):
         formattedStringLast10Posts = "\n".join([f"{i + 1}. {text}" for i, text in enumerate(last10Posts)])    
     
     if botId:
-        dataForBotToUse = getDataForBot(botName)
+        dataForBotToUse = None
+        dataFromTool =  getDataFromTool(botName)
+        if dataFromTool and 'dataToUse' in dataFromTool:
+            dataForBotToUse = dataFromTool['dataToUse']
         print('DATA TO USE', dataForBotToUse)
         llmPost = createPostLLMResponse(botName, formattedStringLast10Posts, dataForBotToUse)
-        if(llmPost):
-            newPostData = {
-                "botId": botId,
-                "text": llmPost,
-                "tags": [],
-            }
-            createPost(newPostData)
+        if llmPost:
+            formattedResponseForDB = structureLLMResponse(llmPost, botId);
+            createPost(formattedResponseForDB)
         else:
           raise ValueError(f"LLM Post not not valid")
    
