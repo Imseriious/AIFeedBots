@@ -5,17 +5,16 @@ from controllers.bots.createNewBot import createNewBot
 from controllers.bots.createNewPost import createNewPost
 
 # --- List of bots ---
-# RolandWorthington
-# CryptoSlave
+# Top10Cryptos
 # WhatsInScience
 
 # --- Available Functions ----
     #createNewBot()
-    #createNewPost('RolandWorthington')
+    #createNewPost('Top10Cryptos')
     #posts = getSubredditPosts('ArtificialInteligence')
     
 def main():
     print("...:::Starting main function:::...")
-    createNewPost('WhatsInScience')
+    print(getSubredditPosts('CryptoCurrency'))
 
 main()

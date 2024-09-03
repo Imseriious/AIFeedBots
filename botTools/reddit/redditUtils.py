@@ -20,4 +20,18 @@ def initialize_reddit_client():
     
 def get_subreddit_posts(reddit, subreddit_name, limit=10):
     subreddit = reddit.subreddit(subreddit_name)
-    return list(subreddit.hot(limit=limit))
+    subredditSubmissions = list(subreddit.hot(limit=limit))
+    formattedPosts = formatRedditPosts(subredditSubmissions)
+    return formattedPosts
+
+def formatRedditPosts(posts):
+    formattedPosts = []
+    for post in posts:
+        formattedPosts.append({
+            'title': post.title,
+            'url': post.url,
+            'upvotes': post.score,
+            'text': post.selftext,
+            'flair': post.link_flair_text
+        })
+    return formattedPosts

@@ -15,7 +15,7 @@ def getDataFromTool(botName):
         "imageUrl": None
     }
     match botName:
-        case 'CryptoSlave':
+        case 'Top10Cryptos':
             returnData['dataToUse'] = get_top_10_cryptocurrencies()
         case 'WhatsInScience':
             returnData['dataToUse'] = getWhatsInScienceData()
