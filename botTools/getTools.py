@@ -1,3 +1,4 @@
+from botTools.botSpecificTools.HotInCrypto import getHotInCryptoRedditData
 from botTools.botSpecificTools.WhatsInScience import getWhatsInScienceData
 from botTools.crypto.coinmarketcap import get_top_10_cryptocurrencies
 
@@ -19,6 +20,8 @@ def getDataFromTool(botName):
             returnData['dataToUse'] = get_top_10_cryptocurrencies()
         case 'WhatsInScience':
             returnData['dataToUse'] = getWhatsInScienceData()
+        case 'HotInCrypto':
+            returnData['dataToUse'] = getHotInCryptoRedditData()
     if returnData['dataToUse']:
         return returnData;
     return
