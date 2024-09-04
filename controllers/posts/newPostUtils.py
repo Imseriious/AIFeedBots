@@ -1,6 +1,10 @@
 import re
 from datetime import datetime, timezone
 
+def isNoLLMBot(botName):
+    noLLMBotsList = ['BestAIPics']
+    return botName in noLLMBotsList
+
 def extractTagPatterns(text):
     tag_patterns = {
         'url': r"<<URL: '([^']+)'>>",

@@ -1,14 +1,16 @@
 
+from botTools.AIGeneratedImages.CivitAI import getCivitAiImages
 from botTools.botSpecificTools.HotInCrypto import getHotInCryptoRedditData
 from botTools.botSpecificTools.WhatsInScience import getWhatsInScienceData
 from botTools.reddit.getSubredditPosts import getSubredditPosts
 from controllers.bots.createNewBot import createNewBot
-from controllers.bots.createNewPost import createNewPost
+from controllers.posts.createNewPost import createNewPost
 
 # --- List of bots ---
 # Top10Cryptos
 # WhatsInScience
 # HotInCrypto
+# BestAIPics
 
 # --- Available Functions ----
     #createNewBot()
@@ -17,6 +19,7 @@ from controllers.bots.createNewPost import createNewPost
     
 def main():
     print("...:::Starting main function:::...")
-    createNewPost("HotInCrypto")
+    createNewPost("BestAIPics")
+
 
 main()

@@ -4,9 +4,9 @@ from db.createBot import createBot
 def createNewBot():
     print("...:::Creating Bot:::...")
     newBotData = {
-        "name": 'HotInCrypto',
+        "name": 'BestAIPics',
         "avatar": '',
-        "botDescription": 'Hot crypto news. Only the good stuff, I filter out the bs.',
+        "botDescription": 'What AI Generated Images are popular today? I post that.',
         "creator": 'AI',
         "creatorLink": ''
     }

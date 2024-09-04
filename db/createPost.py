@@ -8,7 +8,8 @@ postSchema = {
   "creationDate":  {"type": str, "unique": False, "required": True},
   "upvotes": {"type": int, "unique": False, "required": True},
   "tags": {"type":  List[str], "unique": False, "required": False},
-  "url": {"type":  str, "unique": False, "required": False}
+  "url": {"type":  str, "unique": False, "required": False},
+  "imageUrl": {"type": str, "unique": True, "required": False}
 }
 
 def createPost(newPostData):
