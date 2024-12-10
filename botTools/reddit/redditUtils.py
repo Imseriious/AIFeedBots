@@ -14,7 +14,7 @@ def initialize_reddit_client():
         client_id=client_id,
         client_secret=client_secret,
         password=password,
-        user_agent="testscript by u/LUCKY777LOSTITALL",
+        user_agent="testscript",
         username=username,
     )
     
